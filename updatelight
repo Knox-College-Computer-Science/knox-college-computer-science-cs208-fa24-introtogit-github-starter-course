@@ -1,0 +1,18 @@
+public class Kata
+{
+    public static string UpdateLight(string current)
+    {
+        if(current.Equals("green")){
+          return "yellow";
+        }
+        else if(current.Equals("yellow")){
+          return "red";
+        }
+        else if(current.Equals("red")){
+          return "green";
+        }
+        else{
+          return "error";
+        }
+    }
+}
