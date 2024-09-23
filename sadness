@@ -1,0 +1,501 @@
+public class Kata
+{
+    public static string UpdateLight(string current)
+    {
+        if(current.Equals("green")){
+          return "yellow";
+        }
+        else if(current.Equals("yellow")){
+          return "red";
+        }
+        else if(current.Equals("red")){
+          return "green";
+        }
+        else{
+          return "error";
+        }
+    }
+}
+
+class AreTheySame
+{
+  public static bool comp(int[] a, int[] b)
+  {
+    bool cool=true;
+    if(a==null){
+      return false;
+    }
+    if (b==null){
+      return false;
+    }
+    if(a.Length!=b.Length){
+      return false;
+    }
+    for(int i=0;i<a.Length;i++){
+      for(int j=0;j<b.Length;j++){
+        if(a[i]*a[i]==b[j]){
+          cool=false;
+          b[j]=123;
+          break;
+        }
+      }
+    if (cool==true){
+        return false;
+    }
+      cool=true;
+    }
+    return true;
+  }
+}
+
+using System;
+
+public static class Kata
+{
+    public static string Disemvowel(string str)
+    {
+      
+      for(int i=0;i<str.Length;i++){
+        if(str[i].Equals('a')){
+          str=str.Substring(0,i) + str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('e')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('i')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('o')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('u')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('A')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('I')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('E')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('U')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+        else if (str[i].Equals('O')){
+          str=str.Substring(0,i)+str.Substring(i+1);
+          i--;
+        }
+      }
+        return str;
+    }
+}
+using System;
+using System.Linq;
+
+public class Kata 
+{
+  public static double infected(string s)
+  {
+    bool infected=false;
+    double count=0;
+    char[] h=s.ToCharArray();
+    double total=0;
+    for(int i=0;i<s.Length;i++){
+      if(s[i].Equals('1')){
+        infected=true;
+      }
+      else if(s[i].Equals('0') && infected==true){
+        h[i]='1';
+      }
+      else if(s[i].Equals('X')){
+        infected=false;
+      }
+    }
+    infected=false;
+    for(int i=s.Length-1;i>=0;i--){
+      if(s[i].Equals('1')){
+        infected=true;
+      }
+      else if(s[i].Equals('0')&& infected==true ){
+        h[i]='1';
+      }
+      else if(s[i].Equals('X')){
+        infected=false;
+      }
+    }
+    for(int i=0;i<s.Length;i++){
+      if(h[i].Equals('1')){
+        count++;
+      }
+    }
+    for(int i=0;i<s.Length;i++){
+      if(h[i].Equals('1')){
+        total++;
+      }
+      else if(h[i].Equals('0')){
+        total++;
+      }
+    }
+    double k=count/total;
+    double q=k * 10;
+    double w=q * 10;
+    return w;
+  }
+}
+
+using System;
+
+public static class Kata
+{
+  public static string RemoveDuplicateWords(string s)
+  {
+    
+    string no="";
+    string bad="";
+    int count=0;
+    for(int i=0;i<s.Length;i++){
+      if(s[i].Equals(' ')){
+        if(!bad.Contains(no)){
+          if(count>0){
+            bad=bad+" "+no;
+          }
+          else{
+            bad=bad+no;
+          }
+          count++;
+        }
+        no="";
+      }
+      else if(i==s.Length-1){
+        no=no+s[i];
+        if(!bad.Contains(no)){
+          if(count>0){
+            bad=bad+" "+no;
+          }
+          else{
+            bad=bad+no;
+          }
+          count++;
+        }
+        no="";
+      }
+      else{
+        no=no+s[i];
+      }
+        
+    }
+    return bad;
+    }
+    
+  }
+public class BouncingBall {
+	
+	public static int bouncingBall(double h, double bounce, double window) {
+		int count=1;
+    if(h<=0){
+      return -1;
+    }
+    if(0>=bounce||bounce>=1){
+      return -1;
+    }
+    if(window>=h){
+      return -1;
+    }
+    for(int i=0;i<1;i--){
+        if(h>window){
+          count=count+2;
+          h=h*bounce;
+        }
+        else{
+          break;
+        }
+      }
+    count=count-2;
+    return count;
+	}
+}
+
+using System;
+
+public static class Kata
+{
+  public static string ReverseWords(string str)
+  {
+     string no="";
+    string bad="";
+    int count=0;
+    for(int i=0;i<str.Length;i++){
+      if(str[i].Equals(' ')){
+        if(count!=0){
+          bad=bad+" "+no;
+        }
+        else{
+          bad=bad+no;
+        }
+        no="";
+        count++;
+      }
+      else if(i==str.Length-1){
+        no=str[i]+no;
+        if(count!=0){
+          bad=bad+" "+no;
+        }
+        else{
+          bad=bad+no;
+        }
+        no="";
+        count++;
+      }
+      else{
+        no=str[i]+no;
+      }
+      }
+    return bad;
+      }  
+    }
+
+public class Kata
+{
+  public static int FindShort(string s)
+  {
+    int count=0;
+    int no=100;
+    for(int i=0;i<s.Length;i++){
+      if(s[i].Equals(' ')){
+        if(count<no){
+          no=count;
+        }
+        count=0;
+      }
+      else{
+        count++;
+      }
+    }
+    if(count<no){
+          no=count;
+        }
+    return no;
+  }
+}
+
+
+public class DnaStrand 
+    {
+        public static string MakeComplement(string dna)
+        {
+            string ick="";
+          for(int i=0;i<dna.Length;i++){
+            if(dna[i].Equals('A')){
+              ick+="T";
+            }
+            if(dna[i].Equals('T')){
+              ick+="A";
+            }
+            if(dna[i].Equals('C')){
+              ick+="G";
+            }
+            if(dna[i].Equals('G')){
+              ick+="C";
+            }
+          }
+        return ick;
+        }
+    }
+
+
+public static class Kata
+{
+  public static int Solution(int value)
+  {
+    int sum=0;
+    if(value<0){
+      return 0;
+    }
+    for(int i=1; i<value;i++){
+      if(i%3==0){
+        sum+=i;
+      }
+      else if(i%5==0){
+        sum+=i;
+      }
+    }
+    return sum;
+  }
+}
+
+class MorseCodeDecoder
+{
+	public static string Decode(string morseCode)
+	{
+    string sad="";
+    string no="";
+    string bad="";
+		string[] ick= morseCode.Split("   ");
+    for(int i=0;i<ick.Length;i++){
+      sad=ick[i];
+      for(int j=0; j<sad.Length;j++){
+        if(sad[j].Equals(' ')){
+          bad=bad + MorseCode.Get(no);
+          no="";
+          
+        }
+        else if(j==sad.Length-1){
+          no=no+sad[j]; 
+          bad=bad + MorseCode.Get(no);
+          no="";
+        }
+        else{
+          no=no+sad[j];
+        }
+      }
+      if(i!=ick.Length-1 && bad.Length>0)
+      bad=bad+" ";
+    }
+    return bad;
+    
+	}
+}
+
+public static class TimeFormat
+{
+    public static string GetReadableTime(int seconds)
+    {
+      
+      int hour=0;
+      hour=seconds/3600;
+      seconds=seconds-3600*hour;
+      int min=seconds/60;
+      if(min<0){
+        min=0;
+      }
+      seconds=seconds-60*min;
+      if(seconds<0){
+        seconds=0;
+      }
+      string ick=hour.ToString();
+      string no=min.ToString();
+      string bad=seconds.ToString();
+      if(hour<10){
+        ick="0"+ick;
+      }
+      if(min<10){
+        no="0"+min;
+      }
+      if(seconds<10){
+        bad="0"+seconds;
+      }
+        return ick+":"+no+":"+bad;
+    }
+}
+
+using System;
+class WhichAreIn
+        {
+            public static string[] inArray(string[] array1, string[] array2)
+            {
+              int count=0;
+              int mean=0;
+                for(int i=0;i<array1.Length;i++){
+                  
+                  for(int j=0;j<array2.Length;j++){
+                    if(array2[j].Contains(array1[i])){
+                      count++;
+                      break;
+                    }
+                  }
+                }
+              string[] cool= new string[count];
+              for(int i=0;i<array1.Length;i++){
+                  
+                  for(int j=0;j<array2.Length;j++){
+                    if(array2[j].Contains(array1[i])){
+                      cool[mean]=array1[i];
+                      mean++;
+                      break;
+                    }
+                  }
+                }
+              
+              Array.Sort(cool);
+              return cool;
+            }
+        }
+
+	public class Deadfish
+{
+  public static int[] Parse(string data)
+  {
+    int count=0;
+    int stupid=0;
+    int no=0;
+    for(int i=0;i<data.Length;i++){
+      if(data[i].Equals('o')){
+        count++;
+      }
+    }
+    int[] ick = new int[count];
+    for(int i=0;i<data.Length;i++){
+      if(data[i].Equals('i')){
+        stupid++;
+      }
+      else if(data[i].Equals('d')){
+        stupid--;
+      }
+      else if(data[i].Equals('s')){
+        stupid=stupid*stupid;
+      }
+      else if(data[i].Equals('o')){
+        ick[no]=stupid;
+        no++;
+      }
+    }
+    return ick;
+  }
+}
+using System;
+using System.Collections.Generic;
+
+public class Rotations
+{
+  public static Boolean ContainAllRots(string strng, List<string> arr) 
+  {  
+    for(int i=0;i<strng.Length;i++){
+     strng=strng.Substring(1,strng.Length-1)+strng[0];
+     if(!arr.Contains(strng)){
+          return false;
+        }
+
+    }
+    return true;
+  }
+}
+
+	public class Kata
+{
+  public static int[] MoveZeroes(int[] arr)
+  {
+    int[] ick = new int[arr.Length];
+    int count = 0;
+    for(int i=0;i<arr.Length;i++){
+      ick[i]=0;
+    }
+    for(int i=0; i<arr.Length;i++){
+      if(arr[i]!=0){
+        ick[count]=arr[i];
+        count++;
+      }
+    }
+    return ick;
+  }
+}
