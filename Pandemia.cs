@@ -65,3 +65,6 @@ public class Kata
       return 0;
     }
     //calc percentage
+    return (infected / total) * 100.0;
+  }
+}
