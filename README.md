@@ -63,11 +63,17 @@ REFLECTING ON YOUR GOOGLE AND CHATGPT SKILLS
 
 I made frequent use of google as I lack the experience with C#. I definitely made at least one google search for each problem.
 “aggregate c#”
+
 “array sort c#”
+
 “c# implement vs extension reddit”
+
 “non specific array type size c#”
+
 “how to delete first letter of string c#”
+
 “initialize string array c#” x4
+
 
 The array sort search was the most helpful because I realized that LINQ functions can be used to solve problems more efficiently than manual loops and logic. None of the searches were necessarily the least helpful but it would have been better to remember the basic syntax instead of having to look it up multiple times.
 
