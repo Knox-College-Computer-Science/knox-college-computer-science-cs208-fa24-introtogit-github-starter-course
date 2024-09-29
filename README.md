@@ -62,6 +62,7 @@ ChatGPT can be good at coding at least from my perspective because it has more k
 REFLECTING ON YOUR GOOGLE AND CHATGPT SKILLS
 
 I made frequent use of google as I lack the experience with C#. I definitely made at least one google search for each problem.
+
 “aggregate c#”
 
 “array sort c#”
